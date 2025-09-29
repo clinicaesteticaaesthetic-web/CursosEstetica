@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Estética Profesional - Formación de Élite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #1a237e;
+            --accent-color: #283593;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --gold-color: #D4AF37;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-large {
+            padding: 16px 40px;
+            font-size: 18px;
+        }
+
+        .btn-gold {
+            background-color: var(--gold-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-gold:hover {
+            background-color: #c19d2e;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 35, 126, 0.8);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        .hero .btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        .about {
+            background-color: var(--primary-color);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .features {
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 35px;
+        }
+
+        .courses {
+            background-color: var(--primary-color);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .course-header h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .course-price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .course-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .course-features li:before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .video-section {
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery {
+            background-color: var(--primary-color);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .map-section {
+            padding: 0;
+            height: 450px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .calendly {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 992px) {
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://www.dropbox.com/scl/fi/rckhhawih3vx598uww9on/Imagen-de-WhatsApp-2025-09-23-a-las-18.28.35_def80f86.jpg?rlkey=o8bv6yek4y425q48rfn2r02yo&raw=1" alt="Academia de Estética">
+                <h1>Academia Estética</h1>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Inscripción</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <video class="video-background" autoplay muted loop>
+            <source src="https://www.dropbox.com/scl/fi/10e4d2gm4tr4ftf2tpmf4/Tosca-and-White-Minimalist-Healthcare-Instagram-Story-Video-1.mp4?rlkey=iu061wh2y0m197hchu81614qg&raw=1" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h1>Conviértete en Especialista en Estética</h1>
+            <p>Formación profesional de élite con certificación internacional. Domina las técnicas más demandadas del mercado.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-large btn-gold">Inscríbete Ahora</a>
+                <a href="#cursos" class="btn btn-large">Ver Cursos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>Formación de Élite en Estética</h2>
+                <p>En nuestra academia, transformamos pasión en profesión. Con más de 10 años de experiencia formando a los mejores especialistas en estética, ofrecemos programas diseñados para el éxito profesional inmediato.</p>
+                <p>Nuestra metodología combina teoría avanzada con práctica intensiva en instalaciones de última generación. Cada curso está impartido por profesionales activos en el sector, garantizando una formación actualizada y relevante.</p>
+                <p>Al graduarte, recibirás una certificación internacional reconocida que abrirá las puertas a oportunidades laborales en los mejores centros estéticos, spas y clínicas especializadas.</p>
+                <a href="#contacto" class="btn">Solicitar Información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="beneficios">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por Qué Elegir Nuestra Academia?</h2>
+                <p>Ventajas exclusivas para tu formación profesional</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Certificación Internacional</h3>
+                    <p>Diploma reconocido a nivel mundial que valida tu expertise profesional en el sector estético.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Bolsa de Empleo Exclusiva</h3>
+                    <p>Acceso prioritario a oportunidades laborales en nuestra red de centros asociados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Grupos Reducidos</h3>
+                    <p>Atención personalizada con grupos máximos de 8 estudiantes para un aprendizaje óptimo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Financiamiento Flexible</h3>
+                    <p>Planes de pago adaptados a tus necesidades sin intereses adicionales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Alta Demanda Laboral</h3>
+                    <p>95% de nuestros graduados consiguen empleo en los primeros 3 meses tras finalizar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Actualizaciones Permanentes</h3>
+                    <p>Acceso vitalicio a workshops de actualización sobre nuevas técnicas y tecnologías.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="cursos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Programas de Formación</h2>
+                <p>Cursos especializados con salida laboral inmediata</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Estética Facial Avanzada</h3>
+                        <p class="course-price">$1.200.000</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="course-features">
+                            <li>120 horas teórico-prácticas</li>
+                            <li>Técnicas de hidratación profunda</li>
+                            <li>Limpieza facial profesional</li>
+                            <li>Aplicación de alta tecnología</li>
+                            <li>Protocolos de rejuvenecimiento</li>
+                            <li>Certificación internacional</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Inscribirse</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Cosmetología Aplicada</h3>
+                        <p class="course-price">$980.000</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="course-features">
+                            <li>80 horas intensivas</li>
+                            <li>Formulación de productos</li>
+                            <li>Principios activos avanzados</li>
+                            <li>Técnicas de aplicación</li>
+                            <li>Análisis de piel</li>
+                            <li>Certificación internacional</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Inscribirse</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Masoterapia Especializada</h3>
+                        <p class="course-price">$1.500.000</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="course-features">
+                            <li>150 horas completas</li>
+                            <li>Drenaje linfático manual</li>
+                            <li>Masaje reductivo</li>
+                            <li>Técnicas de moldeamiento</li>
+                            <li>Terapias corporales</li>
+                            <li>Certificación internacional</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Inscribirse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conoce Nuestra Metodología</h2>
+                <p>Aprende con los mejores profesionales del sector</p>
+            </div>
+            <div class="video-container">
+                <video controls poster="https://www.dropbox.com/scl/fi/kvd3sdetaaa6ntp9vrqz5/IMG_5151.jpg?rlkey=bazdx3f84r5tkargl98uvbdor&raw=1">
+                    <source src="https://www.dropbox.com/scl/fi/ithrzck2c11a9wvp84qrq/VIDEO-2025-08-09-15-40-17-1.mp4?rlkey=3yjngb60qs2tusc0jzfzk326z&raw=1" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Estudiantes Felices</h2>
+                <p>El éxito de nuestra formación en imágenes</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://www.dropbox.com/scl/fi/kvd3sdetaaa6ntp9vrqz5/IMG_5151.jpg?rlkey=bazdx3f84r5tkargl98uvbdor&raw=1" alt="Estudiante 1">
+                    <div class="gallery-overlay">
+                        <p>Graduación 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.dropbox.com/scl/fi/55uaik06da3ox8f5x4z3o/IMG_5150.HEIC?rlkey=w7b2hszl9tsbiixuclwuiuvpt&raw=1" alt="Estudiante 2">
+                    <div class="gallery-overlay">
+                        <p>Clase Práctica</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.dropbox.com/scl/fi/kj5kramkufb5dwxsk380u/IMG_5164.HEIC?rlkey=ylx9u8tyb6a367zx3jj77ikdk&raw=1" alt="Estudiante 3">
+                    <div class="gallery-overlay">
+                        <p>Workshop Especial</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.dropbox.com/scl/fi/1nydicqtgjed8xs2qrw6w/IMG_5165.HEIC?rlkey=wqm6zdfvkwhbv4a6n3krnz15a&raw=1" alt="Estudiante 4">
+                    <div class="gallery-overlay">
+                        <p>Práctica Profesional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inscripciones Abiertas</h2>
+                <p>Comienza tu camino hacia el éxito profesional</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>KR 21 62 47, Bogotá</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>312 3842671</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Horario de Atención</h4>
+                                <p>Lunes - Viernes: 8:00 am - 7:00 pm<br>Sábados: 9:00 am - 2:00 pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/channel/UCQI_Rlmcw8H7v1Sh_Caq4Xg" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/clinical.aestheticc" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@bodycliniccolombia" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Solicitar Inscripción</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Curso de Interés</label>
+                            <select id="course" required>
+                                <option value="">Seleccione un curso</option>
+                                <option value="facial">Estética Facial Avanzada</option>
+                                <option value="cosmetologia">Cosmetología Aplicada</option>
+                                <option value="masoterapia">Masoterapia Especializada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje Adicional</label>
+                            <textarea id="message" placeholder="Cuéntanos tus objetivos..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.785134799575!2d-74.07788892468737!3d4.638230942123259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a5a5e5e5e5e%3A0x5e5e5e5e5e5e5e5e!2sKR%2021%2062%2047%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1690000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Academia Estética</h3>
+                    <p>Formamos a los mejores profesionales en estética con programas de élite y certificación internacional.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/channel/UCQI_Rlmcw8H7v1Sh_Caq4Xg" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/clinical.aestheticc" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@bodycliniccolombia" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Cursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#cursos">Estética Facial Avanzada</a></li>
+                        <li><a href="#cursos">Cosmetología Aplicada</a></li>
+                        <li><a href="#cursos">Masoterapia Especializada</a></li>
+                        <li><a href="#cursos">Depilación Profesional</a></li>
+                        <li><a href="#cursos">Maquillaje Artístico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Inscripción</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> KR 21 62 47, Bogotá</li>
+                        <li><i class="fas fa-phone"></i> 312 3842671</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 8:00 am - 7:00 pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Academia Estética. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/573123842671" class="floating-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://calendly.com/tu-usuario" class="floating-btn calendly" target="_blank">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    document.getElementById('nav-menu').classList.remove('show');
+                }
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Te contactaremos pronto con toda la información del curso.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
